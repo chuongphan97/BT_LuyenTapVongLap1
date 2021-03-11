@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game đoán số</title>
+</head>
+<body>
+    <button onclick="playGame()">Chơi!</button>
+    <script>
+        function playGame(){
+            let min=1; 
+            let max=0;
+            while(min>max) {
+            alert('Nhập khoảng số min và max');
+            min = +prompt('Nhập số min');
+            max = +prompt('Nhập số max');
+            }
+            let c;
+            c = Math.floor(Math.random()*(max - min))+min;
+            let guess = +prompt('Bạn hãy đoán:');
+            while(guess != c){
+                if (guess > c) {
+                    alert('Bạn đã đoán số lớn hơn số bí ẩn!!');
+                    guess = +prompt('Bạn hãy đoán lại: ');
+                } else {
+                    alert('Bạn đã đoán số bé hơn số bí ẩn!!');
+                    guess = +prompt('Bạn hãy đoán lại: ');
+                }
+            }
+            if (guess == c) {
+                alert('Chúc mừng bạn đã đoán chính xác số bí ẩn!!');
+            }
+
+        }
+    </script>
+    
+</body>
+</html>
